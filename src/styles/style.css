@@ -1,0 +1,169 @@
+/* IMPORT FONT GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --fonte-titulo: "Krona One", sans-serif;
+    --fonte-subtitulo: "Monteserrat", sans-serif;
+
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+}
+
+/* LIMPAR CONFIGURACAO PADRAO */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+body {
+    /* height: 100vh; AO FAZER O FOOTER O BODY NÃO ESTÁ MAIS ALCANÇANDO TODA A PAGE POR ISSO IREMOS ELIMINA-LOS POIS ESTAMOS COLOCANDO VARIAS COISAS */
+    /* PARA USAR 100% DA TELA NA ALTURA - VH = VIEWPORT OU SEJA DA TELA DO NOSSO PROJETO NO NAVEGADOR */
+    box-sizing: border-box; /* PARA GARANTIR QUE O FILHO NAO SAI FORA DA MARGEM PAI OU TELA - PAI = QUEM EM GLOBA ALL COD = BODY */
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);      
+}  
+
+.cabecalho {
+    padding: 3% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-subtitulo);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.portfolio {
+    padding: 5% 15%;
+    /* margin: 10% 13%; O ESPAÇAMENTO ESTA MUITO GRANDE E TEM ESPAÇO DESNECESSARIO NA PARTE SUPERIOR, PODEMOS O PADDING QUE VAI DEFINIR A DISTANCIA DA BORDA DA TELA ATE O CONTEUDO INTERNO */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.portfolio__content {
+    width: 50%;/* NAO TEM NECESSIDADE DE COLOCAR A ALTURA PQ ELA VAI SUBIR COM O TEXTO E NAO VAI FICAR CENTRALIZADO
+    height: 482px;
+    text-align: left;*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.portfolio__content-title {
+    /*NAO TEM NECESSIDADE DE FORMATAR A FONT PQ ELA JA VEM FORMATADA DO IMPORTE
+    width: 593px;
+    height: 168px;
+    font-weight: 400;*/
+    font-size: 2.25rem;
+    font-family: "Krona One", sans-serif;
+}
+
+.portfolio__content-title p {
+    color: var(--cor-terciaria);
+}
+
+.portfolio__content-subtitle {
+    /* NAO TEM NECESSIDADE DE COLOCAR A LARGURA PQ A FONT JA VEM FORMATADA
+    width: 593px;*/
+    font-family: var(--fonte-subtitulo);
+    font-size: 1.5rem;
+}
+
+.portfolio__content-subtitle ul {
+    list-style: none;
+}
+
+.portfolio__content-subtitle li::before {
+    content: "\2022";
+    color: var(--cor-secundaria);
+    font-weight: bolder;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.portfolio__content-subtitle a {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+.portfolio__social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.portfolio__social-media__subtitle {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.portfolio__social-media .social-media {
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    border: 2px solid var(--cor-terciaria);
+    width: 50%;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-subtitulo);
+}
+
+.social-media:hover {
+    background-color: var(--cor-hover);
+}
+
+.portfolio__imagem {
+    width: 50%;
+}
+
+.rodape {
+    padding: 24px;
+    text-align: center;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    font-family: var(--fonte-subtitulo);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1023px) {
+
+    .cabecalho {
+        padding: 12%;
+    }
+    
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .portfolio {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .portfolio__content {
+        width: auto;
+    }
+}
